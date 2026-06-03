@@ -1,0 +1,18 @@
+name: shoppingApi
+on:
+push:
+branches:
+-main
+pull_request:
+branches:
+-main
+jobs:
+run-api-tests:
+runs-on: ubuntu-latest
+steps:
+-name: Install Postman CLI
+run:curl -o "https:dl-cli.pstmn.io/install/linux64.sh" | sh
+-name: Login to Postman
+run:postman login --with-api-key ${{secrets.shoppingApi_KEY}}
+-name: Run shoppingApi
+run: postman collection run "54348994-6e318fe9-2492-48bc-b664-f2a3dd34ba86" -e "54348994-97c74c8f-ea10-4b8f-a4ad-5d991f38b9c3"

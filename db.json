@@ -1,0 +1,300 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "first_name": "akin",
+      "last_name": "jide",
+      "email": "alabi@test.com"
+    },
+    {
+      "id": "2",
+      "first_name": "iyanu",
+      "last_name": "oluwa",
+      "email": "iyanu@test.com"
+    },
+    {
+      "id": "3",
+      "first_name": "lola",
+      "last_name": "mary",
+      "email": "mary@test.com"
+    },
+    {
+      "id": "4",
+      "first_name": "raj",
+      "last_name": "jeet",
+      "email": "raj@test.com"
+    },
+    {
+      "id": "6",
+      "first_name": "dami",
+      "last_name": "lola",
+      "email": "dam@test.com"
+    },
+    {
+      "id": "h0tXAnPsuZ0",
+      "first_name": "chi",
+      "last_name": "buzor",
+      "email": "chi@test.com"
+    },
+    {
+      "id": "59HcaiBBlUY",
+      "first_name": "chi",
+      "last_name": "buzor",
+      "email": "chi@test.com"
+    },
+    {
+      "id": "1pNwFyIBaXI",
+      "first_name": "chi",
+      "last_name": "buzor",
+      "email": "chi@test.com"
+    },
+    {
+      "id": "6NcEgg6q9j4",
+      "first_name": "chi",
+      "last_name": "buzor",
+      "email": "chi@test.com"
+    },
+    {
+      "id": "mFPcnf16z-o",
+      "first_name": "chi",
+      "last_name": "buzor",
+      "email": "chi@test.com"
+    },
+    {
+      "id": "6SEbcnALO8E",
+      "first_name": "chi",
+      "last_name": "buzor",
+      "email": "chi@test.com"
+    },
+    {
+      "id": "OhpCTOy-EdA",
+      "first_name": "chi",
+      "last_name": "buzor",
+      "email": "chi@test.com"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "mouse",
+      "category": "computer",
+      "price": 6000
+    },
+    {
+      "id": "2",
+      "name": "keyboard",
+      "category": "computer",
+      "price": 12000
+    },
+    {
+      "id": "3",
+      "name": "pot",
+      "category": "kitchen",
+      "price": 15000
+    },
+    {
+      "id": "4",
+      "name": "gas cylinder",
+      "category": "kitchen",
+      "price": 10000
+    },
+    {
+      "id": "5",
+      "name": "usb",
+      "category": "computer",
+      "price": 3000
+    },
+    {
+      "id": "6",
+      "name": "grocery",
+      "category": "Kitchen",
+      "price": 25000
+    },
+    {
+      "id": "7",
+      "name": "cutlery",
+      "category": "kitchen",
+      "price": 4000
+    },
+    {
+      "id": "8",
+      "name": "garri",
+      "category": "kitchen",
+      "price": 2000
+    },
+    {
+      "id": "9",
+      "name": "cpu",
+      "category": "computer",
+      "price": 40000
+    },
+    {
+      "id": "hOkWl56pRy4",
+      "name": "cutlery",
+      "category": "kitchen",
+      "price": 4000
+    },
+    {
+      "id": "q3v6wVBFuoI",
+      "name": "cutlery",
+      "category": "kitchen",
+      "price": 4000
+    },
+    {
+      "id": "dkLecmeB3Ug",
+      "name": "cutlery",
+      "category": "kitchen",
+      "price": 4000
+    },
+    {
+      "id": "KLvCs1DAFb4",
+      "name": "cutlery",
+      "category": "kitchen",
+      "price": 4000
+    },
+    {
+      "id": "SP2Aff4MuQ0",
+      "name": "cutlery",
+      "category": "kitchen",
+      "price": 4000
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "userId": 3,
+      "productId": 2,
+      "quantity": 2,
+      "status": "paid"
+    },
+    {
+      "id": "2",
+      "userId": 2,
+      "productId": 1,
+      "quantity": 1,
+      "status": "pending"
+    },
+    {
+      "id": "3",
+      "userId": 1,
+      "productId": 3,
+      "quantity": 4,
+      "status": "paid"
+    },
+    {
+      "id": "4",
+      "userId": 5,
+      "productId": 4,
+      "quantity": 1,
+      "status": "pending"
+    },
+    {
+      "id": "5",
+      "userId": 4,
+      "productId": 5,
+      "quantity": 2,
+      "status": "paid"
+    },
+    {
+      "id": "6",
+      "userId": 6,
+      "productId": 6,
+      "quantity": 3,
+      "status": "pending"
+    },
+    {
+      "id": "ewd7Hm_YjaU",
+      "userId": 1,
+      "productId": 7,
+      "quantity": 2,
+      "status": "pending"
+    },
+    {
+      "id": "WNN0HHxFX7k",
+      "userId": 1,
+      "productId": 7,
+      "quantity": 2,
+      "status": "pending"
+    },
+    {
+      "id": "QZp7u0kFEmk",
+      "userId": 1,
+      "productId": 7,
+      "quantity": 2,
+      "status": "pending"
+    },
+    {
+      "id": "gw4gdxUg31I",
+      "userId": 1,
+      "productId": 7,
+      "quantity": 2,
+      "status": "pending"
+    },
+    {
+      "id": "TWmfwBr2r9o",
+      "userId": 1,
+      "productId": 7,
+      "quantity": 2,
+      "status": "pending"
+    },
+    {
+      "id": "CVm_Sj4pSJE",
+      "userId": 1,
+      "productId": 7,
+      "quantity": 2,
+      "status": "pending"
+    },
+    {
+      "id": "u-PvppQPvcE",
+      "userId": 1,
+      "productId": 7,
+      "quantity": 2,
+      "status": "pending"
+    }
+  ],
+  "payments": [
+    {
+      "id": "1",
+      "orderId": 3,
+      "amount": 15000,
+      "method": "card",
+      "status": "success"
+    },
+    {
+      "id": "2",
+      "orderId": 5,
+      "amount": 3000,
+      "method": "bank_transfer",
+      "status": "failed"
+    },
+    {
+      "id": "3",
+      "orderId": 1,
+      "amount": 12000,
+      "method": "bank_transfer",
+      "status": "success"
+    },
+    {
+      "id": "4",
+      "orderId": 4,
+      "amount": 10000,
+      "method": "card",
+      "status": "failed"
+    },
+    {
+      "id": "5",
+      "orderId": 2,
+      "amount": 6000,
+      "method": "bank_transfer",
+      "status": "success"
+    },
+    {
+      "id": "6",
+      "orderId": 6,
+      "amount": 25000,
+      "method": "cash",
+      "status": "failed"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
