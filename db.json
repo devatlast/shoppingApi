@@ -8,15 +8,15 @@
     },
     {
       "id": "2",
-      "first_name": "iyanu",
-      "last_name": "oluwa",
+      "first_name": "chi",
+      "last_name": "vita",
       "email": "iyanu@test.com"
     },
     {
       "id": "3",
-      "first_name": "lola",
-      "last_name": "mary",
-      "email": "mary@test.com"
+      "first_name": "chibuzor",
+      "last_name": "matthew",
+      "email": "chimat@test.com"
     },
     {
       "id": "4",
@@ -38,12 +38,6 @@
     },
     {
       "id": "59HcaiBBlUY",
-      "first_name": "chi",
-      "last_name": "buzor",
-      "email": "chi@test.com"
-    },
-    {
-      "id": "1pNwFyIBaXI",
       "first_name": "chi",
       "last_name": "buzor",
       "email": "chi@test.com"
@@ -83,14 +77,50 @@
       "first_name": "chi",
       "last_name": "buzor",
       "email": "chi@test.com"
+    },
+    {
+      "id": "RLx0vII_grU",
+      "first_name": "chi",
+      "last_name": "buzor",
+      "email": "chi@test.com"
+    },
+    {
+      "id": "mI9fJHb6Wt4",
+      "first_name": "chi",
+      "last_name": "buzor",
+      "email": "chi@test.com"
+    },
+    {
+      "id": "oG6iEInedlw",
+      "first_name": "chi",
+      "last_name": "buzor",
+      "email": "chi@test.com"
+    },
+    {
+      "id": "z55OYaMtk08",
+      "first_name": "chi",
+      "last_name": "buzor",
+      "email": "chi@test.com"
+    },
+    {
+      "id": "OsPEEnTz8FU",
+      "first_name": "chi",
+      "last_name": "buzor",
+      "email": "chi@test.com"
+    },
+    {
+      "id": "9hfctJGyFHk",
+      "first_name": "chi",
+      "last_name": "buzor",
+      "email": "chi@test.com"
     }
   ],
   "products": [
     {
       "id": "1",
-      "name": "mouse",
-      "category": "computer",
-      "price": 6000
+      "name": "microwave",
+      "category": "kitchen",
+      "price": 32000
     },
     {
       "id": "2",
@@ -160,9 +190,9 @@
     },
     {
       "id": "KLvCs1DAFb4",
-      "name": "cutlery",
+      "name": "groundnut_oil",
       "category": "kitchen",
-      "price": 4000
+      "price": 38000
     },
     {
       "id": "SP2Aff4MuQ0",
@@ -178,6 +208,42 @@
     },
     {
       "id": "HUFRnFVZxck",
+      "name": "cutlery",
+      "category": "kitchen",
+      "price": 4000
+    },
+    {
+      "id": "x17mpSeciNs",
+      "name": "cutlery",
+      "category": "kitchen",
+      "price": 4000
+    },
+    {
+      "id": "eAj2IHhEaP4",
+      "name": "cutlery",
+      "category": "kitchen",
+      "price": 4000
+    },
+    {
+      "id": "lvOWUYHTVwE",
+      "name": "cutlery",
+      "category": "kitchen",
+      "price": 4000
+    },
+    {
+      "id": "e2CPVZi5Hrc",
+      "name": "cutlery",
+      "category": "kitchen",
+      "price": 4000
+    },
+    {
+      "id": "sUHihh8MJYY",
+      "name": "cutlery",
+      "category": "kitchen",
+      "price": 4000
+    },
+    {
+      "id": "QWlaqsE8rXM",
       "name": "cutlery",
       "category": "kitchen",
       "price": 4000
@@ -284,6 +350,48 @@
     },
     {
       "id": "9gjsbFdXBHE",
+      "userId": 1,
+      "productId": 7,
+      "quantity": 2,
+      "status": "pending"
+    },
+    {
+      "id": "mLSJUUUWQPI",
+      "userId": 1,
+      "productId": 7,
+      "quantity": 2,
+      "status": "pending"
+    },
+    {
+      "id": "U0s99sQQedk",
+      "userId": 1,
+      "productId": 7,
+      "quantity": 2,
+      "status": "pending"
+    },
+    {
+      "id": "Y5nMCu-fyhg",
+      "userId": 1,
+      "productId": 7,
+      "quantity": 2,
+      "status": "pending"
+    },
+    {
+      "id": "WVvZ2q24764",
+      "userId": 1,
+      "productId": 7,
+      "quantity": 2,
+      "status": "pending"
+    },
+    {
+      "id": "PunefLWRD-E",
+      "userId": 1,
+      "productId": 7,
+      "quantity": 2,
+      "status": "pending"
+    },
+    {
+      "id": "0CXjuNK4XAo",
       "userId": 1,
       "productId": 7,
       "quantity": 2,

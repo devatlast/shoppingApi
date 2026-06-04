@@ -1,0 +1,1687 @@
+{
+  "info": {
+    "_postman_id": "6e318fe9-2492-48bc-b664-f2a3dd34ba86",
+    "name": "ShoppingApi Collection",
+    "description": "_**This collection contains API requests used to test and validate a local REST API built with JSON Server. The collection covers CRUD operations, filtering, sorting, query parameters, and data validation for users, products, orders, and payments resources.**_\n\n_**Tools used:**_\n\n- _**Postman**_\n    \n- _**Bruno**_\n    \n- _**cURL**_\n    \n- _**JSON Server**_\n    \n- _**VS Code**_\n    \n\n_**Purpose:**__**To practice API testing, request creation, response validation, troubleshooting, and REST API workflows commonly used in Technical Support Engineering and Application Support roles.**_",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54348994",
+    "_collection_link": "https://go.postman.co/collection/54348994-6e318fe9-2492-48bc-b664-f2a3dd34ba86?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "GET users",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/users",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "users"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 07:16:30 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "624"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": \"1\",\n        \"first_name\": \"akin\",\n        \"last_name\": \"jide\",\n        \"email\": \"alabi@test.com\"\n    },\n    {\n        \"id\": \"2\",\n        \"first_name\": \"ola\",\n        \"last_name\": \"wale\",\n        \"email\": \"ola@test.com\"\n    },\n    {\n        \"id\": \"3\",\n        \"first_name\": \"lola\",\n        \"last_name\": \"mary\",\n        \"email\": \"mary@test.com\"\n    },\n    {\n        \"id\": \"4\",\n        \"first_name\": \"raj\",\n        \"last_name\": \"jeet\",\n        \"email\": \"raj@test.com\"\n    },\n    {\n        \"id\": \"5\",\n        \"first_name\": \"melissa\",\n        \"last_name\": \"jake\",\n        \"email\": \"mel@test.com\"\n    },\n    {\n        \"id\": \"6\",\n        \"first_name\": \"dami\",\n        \"last_name\": \"lola\",\n        \"email\": \"dam@test.com\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "POST new user",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"id\":\"5\",\r\n\t\"first_name\":\"chi\",\r\n\t\"last_name\":\"buzor\",\r\n\t\"email\":\"chi@test.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "400 bad request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n        \"id\": 7,\r\n        \"first_name\": \"alabi\",\r\n        \"last_name\": \"jack\",\r\n        \"email\": \"alabi@test.com\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/users",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "users"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 07:25:21 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "43"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"error\": \"Body must be a JSON object\"\n}"
+            },
+            {
+              "name": "201 user Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n\t\"id\":\"5\",\r\n\t\"first_name\":\"chi\",\r\n\t\"last_name\":\"buzor\",\r\n\t\"email\":\"chi@test.com\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/users",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "users"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, HEAD, PUT, PATCH, POST, DELETE"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "content-type"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 08:40:49 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "99"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"fzdnRMBg51Y\",\n    \"first_name\": \"chi\",\n    \"last_name\": \"buzor\",\n    \"email\": \"chi@test.com\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "PATCH user",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"id\":\"5\",\r\n\t\"first_name\": \"chi\",\r\n\t\"last_name\": \"vita\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/users/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Bad request",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n\t\"first_name\": \"alabi\",\r\n\t\"last_name\": \"johnson\"\r\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/users/1",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "users",
+                    "1"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 07:38:36 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "43"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"error\": \"Body must be a JSON object\"\n}"
+            },
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n\t\"id\":\"5\",\r\n\t\"first_name\": \"chi\",\r\n\t\"last_name\": \"johnson\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:3000/users/fzdnRMBg51Y",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "users",
+                    "fzdnRMBg51Y"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, HEAD, PUT, PATCH, POST, DELETE"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "content-type"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 08:44:03 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "101"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"fzdnRMBg51Y\",\n    \"first_name\": \"chi\",\n    \"last_name\": \"johnson\",\n    \"email\": \"chi@test.com\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET user by Id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:3000/users/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "4"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success 200 Ok",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/users/4",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "users",
+                    "4"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 07:44:01 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "88"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"4\",\n    \"first_name\": \"raj\",\n    \"last_name\": \"jeet\",\n    \"email\": \"raj@test.com\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "DELETE user",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:3000/users/1pNwFyIBaXI",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "1pNwFyIBaXI"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "user Removed",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/users/5",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "users",
+                    "5"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 07:47:05 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "92"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"5\",\n    \"first_name\": \"melissa\",\n    \"last_name\": \"jake\",\n    \"email\": \"mel@test.com\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "UPDATE user",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"id\":5,\r\n    \"first_name\":\"chibuzor\",\r\n    \"last_name\":\"matthew\",\r\n    \"email\":\"chimat@test.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/users/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "3"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 Ok user Updated",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n\t\"id\":2,\r\n    \"first_name\":\"iyanu\",\r\n    \"last_name\":\"oluwa\",\r\n    \"email\":\"iyanu@test.com\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/users/2",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "users",
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, HEAD, PUT, PATCH, POST, DELETE"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "content-type"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 08:37:56 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "93"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"2\",\n    \"first_name\": \"iyanu\",\n    \"last_name\": \"oluwa\",\n    \"email\": \"iyanu@test.com\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "item": [
+        {
+          "name": "GET products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success 200 Ok",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/products",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 08:10:10 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "557"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": \"1\",\n        \"name\": \"mouse\",\n        \"category\": \"computer\",\n        \"price\": 6000\n    },\n    {\n        \"id\": \"2\",\n        \"name\": \"keyboard\",\n        \"category\": \"computer\",\n        \"price\": 12000\n    },\n    {\n        \"id\": \"3\",\n        \"name\": \"pot\",\n        \"category\": \"kitchen\",\n        \"price\": 15000\n    },\n    {\n        \"id\": \"4\",\n        \"name\": \"gas cylinder\",\n        \"category\": \"kitchen\",\n        \"price\": 10000\n    },\n    {\n        \"id\": \"5\",\n        \"name\": \"usb\",\n        \"category\": \"computer\",\n        \"price\": 3000\n    },\n    {\n        \"id\": \"6\",\n        \"name\": \"grocery\",\n        \"category\": \"Kitchen\",\n        \"price\": 25000\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "GET products by category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/products?category=kitchen",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "kitchen"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "GET products by category",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/products?category=computer",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products"
+                  ],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": "computer"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 08:11:48 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "277"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "[\n    {\n        \"id\": \"1\",\n        \"name\": \"mouse\",\n        \"category\": \"computer\",\n        \"price\": 6000\n    },\n    {\n        \"id\": \"2\",\n        \"name\": \"keyboard\",\n        \"category\": \"computer\",\n        \"price\": 12000\n    },\n    {\n        \"id\": \"5\",\n        \"name\": \"usb\",\n        \"category\": \"computer\",\n        \"price\": 3000\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "GET products by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/products/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "products",
+                "2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "GET products by id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/products/2",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 08:13:51 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "81"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"id\": \"2\",\n    \"name\": \"keyboard\",\n    \"category\": \"computer\",\n    \"price\": 12000\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST New product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": \"7\",\r\n    \"name\": \"cutlery\",\r\n    \"category\": \"kitchen\",\r\n    \"price\": 4000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "201 Product created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\": \"7\",\r\n    \"name\": \"cutlery\",\r\n    \"category\": \"kitchen\",\r\n    \"price\": 4000\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/products",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, HEAD, PUT, PATCH, POST, DELETE"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "content-type"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 08:29:01 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "88"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"B33hczfYmp4\",\n    \"name\": \"cutlery\",\n    \"category\": \"kitchen\",\n    \"price\": 4000\n}"
+            }
+          ]
+        },
+        {
+          "name": "PATCH product",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": \"8\",\r\n    \"name\": \"groundnut_oil\",\r\n    \"category\": \"kitchen\",\r\n    \"price\": 38000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/products/KLvCs1DAFb4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "products",
+                "KLvCs1DAFb4"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\": \"8\",\r\n    \"name\": \"garri\",\r\n    \"category\": \"kitchen\",\r\n    \"price\": 2000\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/products/B33hczfYmp4",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "products",
+                    "B33hczfYmp4"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, HEAD, PUT, PATCH, POST, DELETE"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "content-type"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 08:34:50 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "86"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"B33hczfYmp4\",\n    \"name\": \"garri\",\n    \"category\": \"kitchen\",\n    \"price\": 2000\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "orders",
+      "item": [
+        {
+          "name": "GET orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/orders",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "orders"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 08:53:07 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "617"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": \"1\",\n        \"userId\": 3,\n        \"productId\": 2,\n        \"quantity\": 2,\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"2\",\n        \"userId\": 2,\n        \"productId\": 1,\n        \"quantity\": 1,\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": \"3\",\n        \"userId\": 1,\n        \"productId\": 3,\n        \"quantity\": 4,\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"4\",\n        \"userId\": 5,\n        \"productId\": 4,\n        \"quantity\": 1,\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": \"5\",\n        \"userId\": 4,\n        \"productId\": 5,\n        \"quantity\": 2,\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"6\",\n        \"userId\": 6,\n        \"productId\": 6,\n        \"quantity\": 3,\n        \"status\": \"pending\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Filter Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/orders?status=pending",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "pending"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/orders?status=paid",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "orders"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "paid"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 08:54:50 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "305"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": \"1\",\n        \"userId\": 3,\n        \"productId\": 2,\n        \"quantity\": 2,\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"3\",\n        \"userId\": 1,\n        \"productId\": 3,\n        \"quantity\": 4,\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"5\",\n        \"userId\": 4,\n        \"productId\": 5,\n        \"quantity\": 2,\n        \"status\": \"paid\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "POST New order",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"id\": \"7\",\r\n        \"userId\": 1,\r\n        \"productId\": 7,\r\n        \"quantity\": 2,\r\n        \"status\": \"pending\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "201 order Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n        \"id\": \"7\",\r\n        \"userId\": 1,\r\n        \"productId\": 7,\r\n        \"quantity\": 2,\r\n        \"status\": \"pending\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/orders",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "orders"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, HEAD, PUT, PATCH, POST, DELETE"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "content-type"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 08:59:09 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "98"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"ewd7Hm_YjaU\",\n    \"userId\": 1,\n    \"productId\": 7,\n    \"quantity\": 2,\n    \"status\": \"pending\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "payments",
+      "item": [
+        {
+          "name": "GET All payments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/payments",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "payments"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/payments",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "payments"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 09:00:27 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "678"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": \"1\",\n        \"orderId\": 3,\n        \"amount\": 15000,\n        \"method\": \"card\",\n        \"status\": \"success\"\n    },\n    {\n        \"id\": \"2\",\n        \"orderId\": 5,\n        \"amount\": 3000,\n        \"method\": \"bank_transfer\",\n        \"status\": \"failed\"\n    },\n    {\n        \"id\": \"3\",\n        \"orderId\": 1,\n        \"amount\": 12000,\n        \"method\": \"bank_transfer\",\n        \"status\": \"success\"\n    },\n    {\n        \"id\": \"4\",\n        \"orderId\": 4,\n        \"amount\": 10000,\n        \"method\": \"card\",\n        \"status\": \"failed\"\n    },\n    {\n        \"id\": \"5\",\n        \"orderId\": 2,\n        \"amount\": 6000,\n        \"method\": \"bank_transfer\",\n        \"status\": \"success\"\n    },\n    {\n        \"id\": \"6\",\n        \"orderId\": 6,\n        \"amount\": 25000,\n        \"method\": \"cash\",\n        \"status\": \"failed\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Filter Payments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/payments?method=bank_transfer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "payments"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "bank_transfer"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/payments?method=card",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "payments"
+                  ],
+                  "query": [
+                    {
+                      "key": "method",
+                      "value": "card"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 09:06:43 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "219"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": \"1\",\n        \"orderId\": 3,\n        \"amount\": 15000,\n        \"method\": \"card\",\n        \"status\": \"success\"\n    },\n    {\n        \"id\": \"4\",\n        \"orderId\": 4,\n        \"amount\": 10000,\n        \"method\": \"card\",\n        \"status\": \"failed\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Sort Payments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/payments?_sort=method",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "payments"
+              ],
+              "query": [
+                {
+                  "key": "_sort",
+                  "value": "method"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/payments?_sort=amount",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "payments"
+                  ],
+                  "query": [
+                    {
+                      "key": "_sort",
+                      "value": "amount"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "tinyhttp"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 03 Jun 2026 09:09:13 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "678"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": \"2\",\n        \"orderId\": 5,\n        \"amount\": 3000,\n        \"method\": \"bank_transfer\",\n        \"status\": \"failed\"\n    },\n    {\n        \"id\": \"5\",\n        \"orderId\": 2,\n        \"amount\": 6000,\n        \"method\": \"bank_transfer\",\n        \"status\": \"success\"\n    },\n    {\n        \"id\": \"4\",\n        \"orderId\": 4,\n        \"amount\": 10000,\n        \"method\": \"card\",\n        \"status\": \"failed\"\n    },\n    {\n        \"id\": \"3\",\n        \"orderId\": 1,\n        \"amount\": 12000,\n        \"method\": \"bank_transfer\",\n        \"status\": \"success\"\n    },\n    {\n        \"id\": \"1\",\n        \"orderId\": 3,\n        \"amount\": 15000,\n        \"method\": \"card\",\n        \"status\": \"success\"\n    },\n    {\n        \"id\": \"6\",\n        \"orderId\": 6,\n        \"amount\": 25000,\n        \"method\": \"cash\",\n        \"status\": \"failed\"\n    }\n]"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "const statusCode = pm.response.code;",
+          "const errorCodes = [400, 401, 403, 404, 500, 502, 503];",
+          "",
+          "// 1. Console Warn on Errors",
+          "if (errorCodes.includes(statusCode)) {",
+          "    console.warn('[ALERT] Bad Result Code: ' + statusCode);",
+          "}",
+          "",
+          "// 2. Success Tests",
+          "if (statusCode === 200) {",
+          "    pm.test('Status is 200 OK', () => { pm.response.to.have.status(200); });",
+          "    pm.test('Response time under 800ms', () => { pm.expect(pm.response.responseTime).to.be.below(800); });",
+          "    pm.test('JSON is not empty', () => {",
+          "        const data = pm.response.json();",
+          "        pm.expect(Object.keys(data).length).to.be.above(0);",
+          "    });",
+          "}"
+        ]
+      }
+    }
+  ]
+}
