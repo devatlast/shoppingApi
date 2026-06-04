@@ -1,0 +1,78 @@
+info:
+  name: PATCH product
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: http://localhost:3000/products/KLvCs1DAFb4
+  body:
+    type: json
+    data: "{\r
+
+      \    \"id\": \"8\",\r
+
+      \    \"name\": \"groundnut_oil\",\r
+
+      \    \"category\": \"kitchen\",\r
+
+      \    \"price\": 38000\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 OK
+    request:
+      url: http://localhost:3000/products/B33hczfYmp4
+      method: PATCH
+      body:
+        type: json
+        data: "{\r
+
+          \    \"id\": \"8\",\r
+
+          \    \"name\": \"garri\",\r
+
+          \    \"category\": \"kitchen\",\r
+
+          \    \"price\": 2000\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: X-Powered-By
+          value: tinyhttp
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Access-Control-Allow-Methods
+          value: GET, HEAD, PUT, PATCH, POST, DELETE
+        - name: Access-Control-Allow-Headers
+          value: content-type
+        - name: Content-Type
+          value: application/json
+        - name: Date
+          value: Wed, 03 Jun 2026 08:34:50 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Content-Length
+          value: "86"
+      body:
+        type: json
+        data: |-
+          {
+              "id": "B33hczfYmp4",
+              "name": "garri",
+              "category": "kitchen",
+              "price": 2000
+          }

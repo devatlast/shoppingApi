@@ -1,0 +1,78 @@
+info:
+  name: GET products
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: http://localhost:3000/products
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success 200 Ok
+    request:
+      url: "{{baseUrl}}/products"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: X-Powered-By
+          value: tinyhttp
+        - name: Content-Type
+          value: application/json
+        - name: Date
+          value: Wed, 03 Jun 2026 08:10:10 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Content-Length
+          value: "557"
+      body:
+        type: json
+        data: |-
+          [
+              {
+                  "id": "1",
+                  "name": "mouse",
+                  "category": "computer",
+                  "price": 6000
+              },
+              {
+                  "id": "2",
+                  "name": "keyboard",
+                  "category": "computer",
+                  "price": 12000
+              },
+              {
+                  "id": "3",
+                  "name": "pot",
+                  "category": "kitchen",
+                  "price": 15000
+              },
+              {
+                  "id": "4",
+                  "name": "gas cylinder",
+                  "category": "kitchen",
+                  "price": 10000
+              },
+              {
+                  "id": "5",
+                  "name": "usb",
+                  "category": "computer",
+                  "price": 3000
+              },
+              {
+                  "id": "6",
+                  "name": "grocery",
+                  "category": "Kitchen",
+                  "price": 25000
+              }
+          ]

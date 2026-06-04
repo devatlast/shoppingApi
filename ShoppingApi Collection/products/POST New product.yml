@@ -1,0 +1,84 @@
+info:
+  name: POST New product
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: http://localhost:3000/products
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: "{\r
+
+      \    \"id\": \"7\",\r
+
+      \    \"name\": \"cutlery\",\r
+
+      \    \"category\": \"kitchen\",\r
+
+      \    \"price\": 4000\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 201 Product created
+    request:
+      url: http://localhost:3000/products
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: "{\r
+
+          \    \"id\": \"7\",\r
+
+          \    \"name\": \"cutlery\",\r
+
+          \    \"category\": \"kitchen\",\r
+
+          \    \"price\": 4000\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: X-Powered-By
+          value: tinyhttp
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Access-Control-Allow-Methods
+          value: GET, HEAD, PUT, PATCH, POST, DELETE
+        - name: Access-Control-Allow-Headers
+          value: content-type
+        - name: Content-Type
+          value: application/json
+        - name: Date
+          value: Wed, 03 Jun 2026 08:29:01 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Content-Length
+          value: "88"
+      body:
+        type: json
+        data: |-
+          {
+              "id": "B33hczfYmp4",
+              "name": "cutlery",
+              "category": "kitchen",
+              "price": 4000
+          }

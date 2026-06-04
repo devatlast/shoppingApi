@@ -1,0 +1,67 @@
+opencollection: 1.0.0
+
+info:
+  name: ShoppingApi Collection
+
+request:
+  scripts:
+    - type: after-response
+      code: "const statusCode = res.getStatus();\r
+
+        const errorCodes = [400, 401, 403, 404, 500, 502, 503];\r
+
+        \r
+
+        // 1. Console Warn on Errors\r
+
+        if (errorCodes.includes(statusCode)) {\r
+
+        \    console.warn('[ALERT] Bad Result Code: ' + statusCode);\r
+
+        }\r
+
+        \r
+
+        // 2. Success Tests\r
+
+        if (statusCode === 200) {\r
+
+        \    test('Status is 200 OK', () => { expect(res.getStatus()).to.equal(200); });\r
+
+        \    test('Response time under 800ms', () => { expect(res.getResponseTime()).to.be.below(800); });\r
+
+        \    test('JSON is not empty', () => {\r
+
+        \        const data = res.getBody();\r
+
+        \        expect(Object.keys(data).length).to.be.above(0);\r
+
+        \    });\r
+
+        }"
+
+docs:
+  content: |-
+    _**This collection contains API requests used to test and validate a local REST API built with JSON Server. The collection covers CRUD operations, filtering, sorting, query parameters, and data validation for users, products, orders, and payments resources.**_
+
+    _**Tools used:**_
+
+    - _**Postman**_
+        
+    - _**Bruno**_
+        
+    - _**cURL**_
+        
+    - _**JSON Server**_
+        
+    - _**VS Code**_
+        
+
+    _**Purpose:**__**To practice API testing, request creation, response validation, troubleshooting, and REST API workflows commonly used in Technical Support Engineering and Application Support roles.**_
+  type: text/markdown
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

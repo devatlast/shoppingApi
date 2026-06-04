@@ -1,0 +1,123 @@
+info:
+  name: POST new user
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: http://localhost:3000/users
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: "{\r
+
+      \t\"id\":\"5\",\r
+
+      \t\"first_name\":\"chi\",\r
+
+      \t\"last_name\":\"buzor\",\r
+
+      \t\"email\":\"chi@test.com\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 400 bad request
+    request:
+      url: "{{baseUrl}}/users"
+      method: POST
+      body:
+        type: json
+        data: "{\r
+
+          \        \"id\": 7,\r
+
+          \        \"first_name\": \"alabi\",\r
+
+          \        \"last_name\": \"jack\",\r
+
+          \        \"email\": \"alabi@test.com\"\r
+
+          }"
+    response:
+      status: 400
+      statusText: Bad Request
+      headers:
+        - name: X-Powered-By
+          value: tinyhttp
+        - name: Content-Type
+          value: application/json
+        - name: Date
+          value: Wed, 03 Jun 2026 07:25:21 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Content-Length
+          value: "43"
+      body:
+        type: json
+        data: |-
+          {
+              "error": "Body must be a JSON object"
+          }
+  - name: 201 user Created
+    request:
+      url: http://localhost:3000/users
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: "{\r
+
+          \t\"id\":\"5\",\r
+
+          \t\"first_name\":\"chi\",\r
+
+          \t\"last_name\":\"buzor\",\r
+
+          \t\"email\":\"chi@test.com\"\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: X-Powered-By
+          value: tinyhttp
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Access-Control-Allow-Methods
+          value: GET, HEAD, PUT, PATCH, POST, DELETE
+        - name: Access-Control-Allow-Headers
+          value: content-type
+        - name: Content-Type
+          value: application/json
+        - name: Date
+          value: Wed, 03 Jun 2026 08:40:49 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Content-Length
+          value: "99"
+      body:
+        type: json
+        data: |-
+          {
+              "id": "fzdnRMBg51Y",
+              "first_name": "chi",
+              "last_name": "buzor",
+              "email": "chi@test.com"
+          }

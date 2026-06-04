@@ -1,0 +1,84 @@
+info:
+  name: UPDATE user
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: http://localhost:3000/users/3
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: "{\r
+
+      \t\"id\":5,\r
+
+      \    \"first_name\":\"chibuzor\",\r
+
+      \    \"last_name\":\"matthew\",\r
+
+      \    \"email\":\"chimat@test.com\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Ok user Updated
+    request:
+      url: http://localhost:3000/users/2
+      method: PUT
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: "{\r
+
+          \t\"id\":2,\r
+
+          \    \"first_name\":\"iyanu\",\r
+
+          \    \"last_name\":\"oluwa\",\r
+
+          \    \"email\":\"iyanu@test.com\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: X-Powered-By
+          value: tinyhttp
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Access-Control-Allow-Methods
+          value: GET, HEAD, PUT, PATCH, POST, DELETE
+        - name: Access-Control-Allow-Headers
+          value: content-type
+        - name: Content-Type
+          value: application/json
+        - name: Date
+          value: Wed, 03 Jun 2026 08:37:56 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Content-Length
+          value: "93"
+      body:
+        type: json
+        data: |-
+          {
+              "id": "2",
+              "first_name": "iyanu",
+              "last_name": "oluwa",
+              "email": "iyanu@test.com"
+          }

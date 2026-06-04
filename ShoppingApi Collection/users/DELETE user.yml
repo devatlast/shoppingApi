@@ -1,0 +1,58 @@
+info:
+  name: DELETE user
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: http://localhost:3000/users/1pNwFyIBaXI
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: user Removed
+    request:
+      url: "{{baseUrl}}/users/5"
+      method: DELETE
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: X-Powered-By
+          value: tinyhttp
+        - name: Content-Type
+          value: application/json
+        - name: Date
+          value: Wed, 03 Jun 2026 07:47:05 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Content-Length
+          value: "92"
+      body:
+        type: json
+        data: |-
+          {
+              "id": "5",
+              "first_name": "melissa",
+              "last_name": "jake",
+              "email": "mel@test.com"
+          }

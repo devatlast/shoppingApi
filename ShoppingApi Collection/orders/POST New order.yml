@@ -1,0 +1,83 @@
+info:
+  name: POST New order
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://localhost:3000/orders
+  body:
+    type: json
+    data: "{\r
+
+      \        \"id\": \"7\",\r
+
+      \        \"userId\": 1,\r
+
+      \        \"productId\": 7,\r
+
+      \        \"quantity\": 2,\r
+
+      \        \"status\": \"pending\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 201 order Created
+    request:
+      url: http://localhost:3000/orders
+      method: POST
+      body:
+        type: json
+        data: "{\r
+
+          \        \"id\": \"7\",\r
+
+          \        \"userId\": 1,\r
+
+          \        \"productId\": 7,\r
+
+          \        \"quantity\": 2,\r
+
+          \        \"status\": \"pending\"\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: X-Powered-By
+          value: tinyhttp
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Access-Control-Allow-Methods
+          value: GET, HEAD, PUT, PATCH, POST, DELETE
+        - name: Access-Control-Allow-Headers
+          value: content-type
+        - name: Content-Type
+          value: application/json
+        - name: Date
+          value: Wed, 03 Jun 2026 08:59:09 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Content-Length
+          value: "98"
+      body:
+        type: json
+        data: |-
+          {
+              "id": "ewd7Hm_YjaU",
+              "userId": 1,
+              "productId": 7,
+              "quantity": 2,
+              "status": "pending"
+          }
